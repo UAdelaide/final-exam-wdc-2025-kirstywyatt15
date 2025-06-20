@@ -142,16 +142,16 @@ WHERE username = 'francene123')`);
 await db.execute(`
 INSERT INTO Dogs (owner_id, name, size)
 SELECT user_id, 'Borris', 3
-FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'francene123')
-`);
+FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'francene123')`);
       }
 
 // Insert data if WalkRequests table is empty
     const [WR_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
     if (WR_rows[0].count === 0) {
       await db.execute(`
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 1 FROM Dog
-s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Max')`);
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 1 FROM Dogs
+WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Max')`);
 
 await db.execute(`
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 09:30:00', 45, 'Beachside Ave', 3 FROM
