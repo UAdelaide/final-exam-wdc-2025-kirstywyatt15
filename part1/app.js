@@ -200,6 +200,27 @@ app.get('/api/walkrequests/open', async (req, res) => {
   }
 });
 
+// Return all open walk requests, incl dog name, requested time, location & owner username as JSON
+app.get('/api/walkrequests/summary', async (req, res) => {
+  try {
+    const [openRequests] = await db.execute(`
+        SELECT r.request_id,
+        d.name AS dog_name,
+        r.requested_time,
+        r.duration_minutes,
+        r.location,
+        o.username AS owner_username
+        FROM WalkRequests r
+        JOIN Dogs d ON r.dog_id = d.dog_id
+        JOIN Users o ON d.owner_id = o.user_id
+        WHERE r.status = 'open'
+        `);
+    res.json(openRequests);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch Open Walk Requests' });
+  }
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = app;
