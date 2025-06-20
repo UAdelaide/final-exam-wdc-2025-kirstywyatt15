@@ -135,7 +135,10 @@ WHERE user_id = (SELECT user_id FROM Users WHERE username = 'caro
 l123')`);
 
 await db.execute(`
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Muffin', 'medium' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'fran
+INSERT INTO Dogs (owner_id, name, size)
+SELECT user_id, 'Muffin', 'medium'
+FROM Users
+WHERE user_id = (SELECT user_id FROM Users WHERE username = 'fran
 cene123')`);
 
 await db.execute(`
