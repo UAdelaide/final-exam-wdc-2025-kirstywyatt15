@@ -144,7 +144,7 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
     const [WA_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
     if (WA_rows[0].count === 0) {
       await db.execute(`
-         INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
+        INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
         (1, 1, 2),
         (2, 1, 2),
         (3, 2, 2),
@@ -155,6 +155,11 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
     const [ratings_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (ratings_rows[0].count === 0) {
       await db.execute(`
+        INSERT INTO WalkRatings (request_id, walker_id, status) VALUES
+        (1, 1, 2),
+        (2, 1, 2),
+        (3, 2, 2),
+        (4, 2, 2)
 
         `);
 
