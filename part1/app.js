@@ -203,7 +203,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 // Return summary of each walker with their average rating and number of completed walks
 app.get('/api/walkers/summary', async (req, res) => {
   try {
-    const [openRequests] = await db.execute(`
+    const [walkers] = await db.execute(`
         SELECT o.username AS walker_username,
         total_ratings <---- needs a set function
         average_rating <----- neds a set function
@@ -216,7 +216,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         JOIN Users o ON d.owner_id = o.user_id
         WHERE r.status = 'open'
         `);
-    res.json(openRequests);
+    res.json(walkers);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch Open Walk Requests' });
   }
