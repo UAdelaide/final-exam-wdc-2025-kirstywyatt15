@@ -139,6 +139,7 @@ HERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Muffin');
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-18 10:45:00', 20, 'Rapid Bay', 1 FROM Dog
 s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
 `);
+      }
 
 // Insert data if WalkApplications table is empty
     const [WA_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
@@ -162,7 +163,6 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
         (3, 2, 2),
         (4, 2, 2)
         `);
-
     }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
