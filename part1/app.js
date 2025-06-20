@@ -116,6 +116,37 @@ INSERT INTO Users (username, email, password_hash, role) VALUES ('paulwalker', '
         ('To Kill a Mockingbird', 'Harper Lee'),
         ('Brave New World', 'Aldous Huxley')
       `);
+
+
+
+`
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Max', 'medium' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'alice123');
+
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Bella', 'small' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'carol1
+23');
+
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Pickles', 'small' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'caro
+l123');
+
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Muffin', 'medium' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'fran
+cene123');
+
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Borris', 3 FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'francene123');
+
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 1 FROM Dog
+s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Max');
+
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 09:30:00', 45, 'Beachside Ave', 2 FROM
+ Dogs WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Bella');
+
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 10:30:00', 60, 'Springfield', 3 FROM D
+ogs WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Borris');
+
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-13 10:30:00', 30, 'Marion', 4 FROM Dogs W
+HERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Muffin');
+
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-18 10:45:00', 20, 'Rapid Bay', 1 FROM Dog
+s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');`
     }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
