@@ -128,7 +128,10 @@ await db.execute(`
 23')`);
 
 await db.execute(`
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Pickles', 'small' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'caro
+INSERT INTO Dogs (owner_id, name, size)
+SELECT user_id, 'Pickles', 'small'
+FROM Users
+WHERE user_id = (SELECT user_id FROM Users WHERE username = 'caro
 l123')`);
 
 await db.execute(`
