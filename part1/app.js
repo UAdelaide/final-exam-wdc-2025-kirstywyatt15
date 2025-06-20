@@ -205,8 +205,8 @@ app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [walkers] = await db.execute(`
         SELECT o.username AS walker_username,
-        total_ratings <---- needs a set function
-        average_rating <----- neds a set function
+        total_ratings, <---- needs a set function
+        average_rating, <----- neds a set function
         completed_walks <--- also needs a fucntion
         FROM WalkRatings r
         JOIN Users o ON r.walker_id = o.user_id
