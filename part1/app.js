@@ -205,8 +205,9 @@ app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [openRequests] = await db.execute(`
         SELECT o.username AS walker_username,
-        rat.rating AS total_rating <---- needs a set
-        
+        total_rating <---- needs a set
+        average_rating 
+
         FROM WalkRequests r
         JOIN Dogs d ON r.dog_id = d.dog_id
         JOIN Users o ON d.owner_id = o.user_id
