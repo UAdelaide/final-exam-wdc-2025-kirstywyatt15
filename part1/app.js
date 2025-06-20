@@ -51,7 +51,7 @@ let db;
     name VARCHAR(50) NOT NULL,
     size ENUM('small', 'medium', 'large') NOT NULL,
     FOREIGN KEY (owner_id) REFERENCES Users(user_id)
-)`);
+    )`);
 
     // Create WalkRequests table
     await db.execute(`CREATE TABLE IF NOT EXISTS WalkRequests (
@@ -63,7 +63,10 @@ let db;
     status ENUM('open', 'accepted', 'completed', 'cancelled') DEFAULT 'open',
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
-)
+    )`);
+
+    // Create Dogs table
+    await db.execute(`
 
 CREATE TABLE IF NOT EXISTS WalkApplications (
     application_id INT AUTO_INCREMENT PRIMARY KEY,
