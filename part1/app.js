@@ -209,9 +209,9 @@ app.get('/api/walkers/summary', async (req, res) => {
         average_rating <----- neds a set function
         completed_walks <--- also needs a fucntion
 
-        needs some joins, probs some subqueries 
+        needs some joins, probs some subqueries
 
-        FROM WalkRequests r
+        FROM WalkRatings r
         JOIN Dogs d ON r.dog_id = d.dog_id
         JOIN Users o ON d.owner_id = o.user_id
         WHERE r.status = 'open'
