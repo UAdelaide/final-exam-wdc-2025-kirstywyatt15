@@ -160,9 +160,9 @@ app.get('/api/dogs', async (req, res) => {
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [openRequests] = await db.execute(`SELECT d.name, d.size, o.username FROM Dogs d INNER JOIN Users o ON o.user_id = d.owner_id`);
-    res.json(dogs);
+    res.json(openRequests);
   } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch Dogs' });
+    res.status(500).json({ error: 'Failed to fetch Open walk' });
   }
 });
 
