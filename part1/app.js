@@ -44,6 +44,8 @@ let db;
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )`);
 
+    // Create Dogs table
+
 
 CREATE TABLE IF NOT EXISTS Dogs (
     dog_id INT AUTO_INCREMENT PRIMARY KEY,
