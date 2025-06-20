@@ -126,7 +126,7 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Borris', 3 FROM Users W
 
 // Insert data if WalkRequests table is empty
     const [WR_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
-    if (rows[0].count === 0) {
+    if (WR_rows[0].count === 0) {
       await db.execute(`
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 1 FROM Dog
 s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Max');
@@ -147,7 +147,7 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
 })();
 
 // Route to return books as JSON
-app.get('/', async (req, res) => {
+app.get('/api/', async (req, res) => {
   try {
     const [books] = await db.execute('SELECT * FROM books');
     res.json(books);
