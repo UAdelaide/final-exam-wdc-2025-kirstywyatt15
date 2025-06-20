@@ -128,7 +128,7 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Muffin', 'medium' FROM 
 cene123')`);
 
 await db.execute(`
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Borris', 3 FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'francene123');
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Borris', 3 FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'francene123')
 `);
       }
 
@@ -145,7 +145,7 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 
  await db.execute(`
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 10:30:00', 60, 'Springfield', 3 FROM D
-ogs WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Borris');
+ogs WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Borris')
 `);
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-13 10:30:00', 30, 'Marion', 4 FROM Dogs W
 HERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Muffin');
