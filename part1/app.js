@@ -210,6 +210,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         JOIN Users o ON w.walker_id = o.user_id) AS total_ratings,
         average_rating,
         completed_walks
+        
         FROM WalkRatings w
         INNER JOIN Users o ON w.walker_id = o.user_id
         WHERE total_ratings =
