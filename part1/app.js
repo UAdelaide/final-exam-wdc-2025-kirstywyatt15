@@ -211,12 +211,13 @@ app.get('/api/walkers/summary', async (req, res) => {
         FROM WalkRatings r
         INNER JOIN Users o ON r.walker_id = o.user_id
         WHERE total_ratings = (SELECT COUNT(rating)
-        FROM WalkRating r
+        FROM WalkRatings r
         JOIN Users o ON r.walker_id = o.user_id
         GROUP BY o.username)
         AND WHERE average_rating = (SELECT AVG(rating)
-        FROM WalkRatings
-        WHERE )
+        FROM WalkRatings r
+        JOIN Users o ON r.walker_id = o.user_id
+        GROUP BY o.username)
         AND WHERE completed_walks = (SELECT status
         FROM WalkRequests
         JOIN WalkRatings
