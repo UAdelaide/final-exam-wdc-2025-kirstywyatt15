@@ -220,7 +220,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         WHERE )
         AND WHERE completed_walks = (SELECT status
         FROM WalkRequests
-        JOIN 
+        JOIN WalkRatings 
         WHERE )
         `);
     res.json(walkers);
