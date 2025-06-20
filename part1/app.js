@@ -77,9 +77,8 @@ let db;
     CONSTRAINT unique_application UNIQUE (request_id, walker_id)
     )`);
 
-    // Create Dogs table
-    await db.execute(`
-CREATE TABLE IF NOT EXISTS WalkRatings (
+    // Create WalkRatings table
+    await db.execute(`CREATE TABLE IF NOT EXISTS WalkRatings (
     rating_id INT AUTO_INCREMENT PRIMARY KEY,
     request_id INT NOT NULL,
     walker_id INT NOT NULL,
@@ -91,7 +90,7 @@ CREATE TABLE IF NOT EXISTS WalkRatings (
     FOREIGN KEY (walker_id) REFERENCES Users(user_id),
     FOREIGN KEY (owner_id) REFERENCES Users(user_id),
     CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
-)
+    )`);
 
 
 
