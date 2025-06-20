@@ -205,7 +205,7 @@ app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [openRequests] = await db.execute(`
         SELECT w.username AS walker_username,
-        total_rat
+        rat.
         o.username AS owner_username
         FROM WalkRequests r
         JOIN Dogs d ON r.dog_id = d.dog_id
