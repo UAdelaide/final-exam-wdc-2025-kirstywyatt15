@@ -161,7 +161,7 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
         (1, 1, 2, 1, 4, "Max loved his walk thank you"),
         (2, 1, 2, 3, 5, "Bella can't wait for new week"),
         (3, 2, 2, 4, 3, ""),
-        (4, 2, 2, 4, 1, )
+        (4, 2, 2, 4, 1, "Muffin hates you")
         `);
     }
   } catch (err) {
