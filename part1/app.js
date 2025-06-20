@@ -168,7 +168,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
         o.username AS owner_username
         FROM WalkRequests r
         JOIN Dogs d ON d.dog_id = r.dog_id
-        IJOIN Users o ON o.user_id = d.owner_id
+        JOIN Users o ON o.user_id = d.owner_id
         WHERE r.status = 'open'
         GROUP BY r.status
         `);
