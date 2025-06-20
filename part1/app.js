@@ -221,7 +221,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         AND WHERE completed_walks = (SELECT COUNT(status)
         FROM WalkRequests r
         JOIN WalkRatings w ON r.request_id = w.request_id
-        WHERE )
+        HAVING)
         GROUP BY o.username
          ----- CHECK: ratings for WHERE walkrequest status = completed or will likely mess up avderage / totals -----
         `);
