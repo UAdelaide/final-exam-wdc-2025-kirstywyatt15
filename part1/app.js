@@ -159,7 +159,7 @@ app.get('/api/dogs', async (req, res) => {
 // Return all open walk requests, incl dog name, requested time, location & owner username as JSON
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [dogs] = await db.execute(`SELECT d.name, d.size, o.username FROM Dogs d INNER JOIN Users o ON o.user_id = d.owner_id`);
+    const [openRequests] = await db.execute(`SELECT d.name, d.size, o.username FROM Dogs d INNER JOIN Users o ON o.user_id = d.owner_id`);
     res.json(dogs);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch Dogs' });
