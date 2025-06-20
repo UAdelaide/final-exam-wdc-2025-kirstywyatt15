@@ -215,9 +215,9 @@ app.get('/api/walkers/summary', async (req, res) => {
 
         WHERE total_ratings = (SELECT COUNT(rating)
         FROM WalkRating r
-        WHERE  )
+        )
 
-        
+
         AND WHERE average_rating = (SELECT AVG(rating)
         FROM WalkRatings
         WHERE )
@@ -225,7 +225,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         FROM WalkRequests
         JOIN WalkRatings
         WHERE )
-         ----- ratings for WHERE walkrequest status = completed or will likely mess up avderage / totals -----
+         ----- CHECK: ratings for WHERE walkrequest status = completed or will likely mess up avderage / totals -----
         `);
     res.json(walkers);
   } catch (err) {
