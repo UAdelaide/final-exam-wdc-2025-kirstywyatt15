@@ -149,7 +149,7 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
 // Route to return books as JSON
 app.get('/api/dogs', async (req, res) => {
   try {
-    const [dogs] = await db.execute('SELECT d.name d.size o.username FROM Dogs d INNER JOIN User o ON ');
+    const [dogs] = await db.execute('SELECT d.name d.size o.username FROM Dogs d INNER JOIN User o ON o.');
     res.json(dogs);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch Dogs' });
