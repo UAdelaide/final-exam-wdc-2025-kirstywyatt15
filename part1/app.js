@@ -150,6 +150,7 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
         (3, 2, 2),
         (4, 2, 2)
         `);
+      }
 
 // Insert data if WalkRatings table is empty
     const [ratings_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
@@ -160,7 +161,6 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
         (2, 1, 2),
         (3, 2, 2),
         (4, 2, 2)
-
         `);
 
     }
