@@ -141,8 +141,15 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
 `);
 
 // Insert data if WalkApplications table is empty
-    const [WR_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
-    if (WR_rows[0].count === 0) {
+    const [WA_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+    if (WA_rows[0].count === 0) {
+      await db.execute(`
+
+        `);
+
+// Insert data if WalkApplications table is empty
+    const [WA_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+    if (WA_rows[0].count === 0) {
       await db.execute(`
 
         `);
