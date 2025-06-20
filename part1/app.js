@@ -236,7 +236,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 });
 
 // Return summary of each walker with their average rating and number of completed walks
-// edited so that only ratings for 
+// edited so that only ratings for completed walks show
 app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [walkers] = await db.execute(`
