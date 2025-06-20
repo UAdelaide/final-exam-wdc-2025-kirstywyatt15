@@ -210,8 +210,8 @@ app.get('/api/walkers/summary', async (req, res) => {
         completed_walks <--- also needs a fucntion
         FROM WalkRatings r
         JOIN Users o ON r.walker_id = o.user_id
-        JOIN 
-        WHERE r.status = 'open'
+        JOIN
+        WHERE total_ratings = ()
         `);
     res.json(walkers);
   } catch (err) {
