@@ -156,7 +156,7 @@ app.get('/api/dogs', async (req, res) => {
   }
 });
 
-// Return all open walk requests, incl dog name, requested time, location,  owner username as JSON
+// Return all open walk requests, incl dog name, requested time, location & owner username as JSON
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [dogs] = await db.execute(`SELECT d.name, d.size, o.username FROM Dogs d INNER JOIN Users o ON o.user_id = d.owner_id`);
