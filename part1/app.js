@@ -122,19 +122,6 @@ let db;
 
 
 `
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Max', 'medium' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'alice123');
-
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Bella', 'small' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'carol1
-23');
-
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Pickles', 'small' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'caro
-l123');
-
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Muffin', 'medium' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'fran
-cene123');
-
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Borris', 3 FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'francene123');
-
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 1 FROM Dog
 s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Max');
 
