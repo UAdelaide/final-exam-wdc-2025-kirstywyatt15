@@ -204,7 +204,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [walkers] = await db.execute(`
-        SELECT o.username AS walker_username,
+        SELECT username AS walker_username,
         (SELECT COUNT(rating)
         FROM WalkRatings w
         JOIN Users o ON w.walker_id = o.user_id) AS total_ratings,
@@ -217,7 +217,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         WHERE status = 'completed') AS completed_walks
 
         FROM WalkRatings w
-        INNER JOIN Users o ON w.walker_id = o.user_id
+         JOIN Users o ON w.walker_id = o.user_id
         WHERE total_ratings =
         GROUP BY o.username)
 
