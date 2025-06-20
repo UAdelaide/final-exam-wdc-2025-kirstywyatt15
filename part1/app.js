@@ -193,10 +193,10 @@ WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles')
     if (ratings_rows[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
-        (1, 1, 1, 4, "Max loved his walk thank you"),
-        (2, 1, 3, 5, "Bella can't wait for new week"),
-        (3, 2, 4, 3, "Borris doesn't like walking so 3 is the best you'll get"),
-        (4, 2, 4, 1, "Muffin hates you, don't come back")
+        (1, 2, 1, 4, "Max loved his walk thank you"),
+        (2, 2, 3, 5, "Bella can't wait for new week"),
+        (3, 5, 4, 3, "Borris doesn't like walking so 3 is the best you'll get"),
+        (4, 5, 4, 1, "Muffin hates you, don't come back")
         `);
     }
   } catch (err) {
