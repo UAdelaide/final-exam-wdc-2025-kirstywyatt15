@@ -148,7 +148,7 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
         (1, 1, 2),
         (2, 1, 2),
         (3, 2, 2),
-        (4, 2, 2),
+        (4, 2, 2)
         `);
 
 // Insert data if WalkRatings table is empty
