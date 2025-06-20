@@ -160,8 +160,8 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
         (1, 1, 2, 1),
         (2, 1, 2, 3),
-        (3, 2, 2, ),
-        (4, 2, 2)
+        (3, 2, 2, 4),
+        (4, 2, 2, 4)
         `);
     }
   } catch (err) {
