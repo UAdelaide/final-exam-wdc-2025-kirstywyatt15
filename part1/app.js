@@ -130,7 +130,7 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Borris', 3 FROM Users W
       await db.execute(`
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 1 FROM Dog
 s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Max');
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 09:30:00', 45, 'Beachside Ave', 2 FROM
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 09:30:00', 45, 'Beachside Ave', 3 FROM
  Dogs WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Bella');
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 10:30:00', 60, 'Springfield', 3 FROM D
 ogs WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Borris');
