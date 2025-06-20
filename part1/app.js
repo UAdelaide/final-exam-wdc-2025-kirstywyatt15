@@ -147,7 +147,7 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
 })();
 
 // Route to return books as JSON
-app.get('/api/', async (req, res) => {
+app.get('/api/dogs', async (req, res) => {
   try {
     const [books] = await db.execute('SELECT * FROM books');
     res.json(books);
