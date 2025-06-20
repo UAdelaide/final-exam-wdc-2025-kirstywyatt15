@@ -212,8 +212,8 @@ app.get('/api/walkers/summary', async (req, res) => {
         JOIN Users o ON r.walker_id = o.user_id
         JOIN
         WHERE total_ratings = ()
+        AND WHERE average_rating = ()
         AND WHERE
-        AND WHRE
         `);
     res.json(walkers);
   } catch (err) {
