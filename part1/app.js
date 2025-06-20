@@ -107,6 +107,7 @@ let db;
         ('francene123', 'francene@example.com', 'hashed009', 'owner'),
         ('paulwalker', 'paul@example.com', 'hashed007', 'walker')
         `);
+      }
 
 // Insert data if Dogs table is empty
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
