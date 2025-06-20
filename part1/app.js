@@ -214,7 +214,8 @@ app.get('/api/walkers/summary', async (req, res) => {
         ----- ratings for WHERE walkrequest status = completed or will likely mess up avderage / totals -----
 
 
-        GROUP BY 
+        GROUP BY o.username
+        
         WHERE total_ratings = (SELECT COUNT(rating)
         FROM WalkRating
         WHERE  )
