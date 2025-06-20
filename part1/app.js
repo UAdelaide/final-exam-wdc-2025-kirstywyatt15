@@ -111,18 +111,16 @@ let db;
 // Insert data if Dogs table is empty
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
     if (rows[0].count === 0) {
-      await db.execute(` INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Max', 'medium' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'alice123');
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Bella', 'small' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'carol1
+      await db.execute(`
+        INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Max', 'medium' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'alice123');
+        INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Bella', 'small' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'carol1
 23');
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Pickles', 'small' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'caro
 l123');
-
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Muffin', 'medium' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'fran
 cene123');
-
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Borris', 3 FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'francene123');
-
-        `);
+`);
 
 
 `
