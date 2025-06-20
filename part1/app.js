@@ -205,7 +205,7 @@ app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [walkers] = await db.execute(`
         SELECT o.username AS walker_username,
-        total_ratings,
+        SELECT total_ratings,
         average_rating,
         completed_walks
         FROM WalkRatings w
