@@ -159,7 +159,7 @@ app.get('/api/dogs', async (req, res) => {
 // Return all open walk requests, incl dog name, requested time, location & owner username as JSON
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [openRequests] = await db.execute(`SELECT r.request_id, d.name, r.requested_time, r.duration_minutes, r.location, o.username
+    const [openRequests] = await db.execute(`SELECT r.request_id, d.name AS dog_name, r.requested_time, r.duration_minutes, r.location, o.username
         FROM WalkRequests r
         WHERE r.status = open or 1??
          SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 1 FROM Dog
