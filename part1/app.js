@@ -218,7 +218,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         AND WHERE average_rating = (SELECT AVG(rating)
         FROM WalkRatings
         WHERE )
-        AND WHERE completed_walks = (SELECT status FROM )
+        AND WHERE completed_walks = (SELECT status FROM WalkRequests )
         `);
     res.json(walkers);
   } catch (err) {
