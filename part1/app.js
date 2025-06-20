@@ -208,11 +208,9 @@ app.get('/api/walkers/summary', async (req, res) => {
         total_ratings <---- needs a set function
         average_rating <----- neds a set function
         completed_walks <--- also needs a fucntion
-
-        needs some joins, probs some subqueries
-
         FROM WalkRatings r
         JOIN Users o ON r.walker_id = o.user_id
+        JOIN 
         WHERE r.status = 'open'
         `);
     res.json(walkers);
