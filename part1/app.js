@@ -223,7 +223,6 @@ app.get('/api/walkers/summary', async (req, res) => {
         JOIN WalkRatings w ON r.request_id = w.request_id
         WHERE status = 'completed')
         GROUP BY o.username
-         ----- CHECK: ratings for WHERE walkrequest status = completed or will likely mess up avderage / totals -----
         `);
     res.json(walkers);
   } catch (err) {
