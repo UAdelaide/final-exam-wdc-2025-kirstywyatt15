@@ -53,9 +53,8 @@ let db;
     FOREIGN KEY (owner_id) REFERENCES Users(user_id)
 )`);
 
-
-
-CREATE TABLE IF NOT EXISTS WalkRequests (
+    // Create WalkRequests table
+    await db.execute(`CREATE TABLE IF NOT EXISTS WalkRequests (
     request_id INT AUTO_INCREMENT PRIMARY KEY,
     dog_id INT NOT NULL,
     requested_time DATETIME NOT NULL,
