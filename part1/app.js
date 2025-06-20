@@ -205,7 +205,7 @@ app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [walkers] = await db.execute(`
         SELECT o.username AS walker_username,
-        total_ratings, <---- needs a set function
+        total_ratings,
         average_rating, <----- neds a set function
         completed_walks <--- also needs a fucntion
         FROM WalkRatings r
@@ -214,8 +214,6 @@ app.get('/api/walkers/summary', async (req, res) => {
         FROM WalkRating r
         JOIN Users o ON r.walker_id = o.user_id
         GROUP BY o.username)
-
-
         AND WHERE average_rating = (SELECT AVG(rating)
         FROM WalkRatings
         WHERE )
@@ -223,7 +221,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         FROM WalkRequests
         JOIN WalkRatings
         WHERE )
-        
+        GROUP BY o.username
          ----- CHECK: ratings for WHERE walkrequest status = completed or will likely mess up avderage / totals -----
         `);
     res.json(walkers);
