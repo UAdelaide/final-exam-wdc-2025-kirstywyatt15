@@ -154,7 +154,7 @@ HERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Muffin')`);
 
 await db.execute(`
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-18 10:45:00', 20, 'Rapid Bay', 1 FROM Dog
-s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
+s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles')
 `);
       }
 
