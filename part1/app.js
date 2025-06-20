@@ -114,10 +114,13 @@ let db;
     if (dogs_rows[0].count === 0) {
       await db.execute(`
 INSERT INTO Dogs (owner_id, name, size)
-SELECT user_id, 'Max', 'medium' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'alice123')`);
+SELECT user_id, 'Max', 'medium'
+FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'alice123')`);
 
 await db.execute(`
-    INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Bella', 'small' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'carol1
+    INSERT INTO Dogs (owner_id, name, size)
+    SELECT user_id, 'Bella', 'small' FROM Users
+    WHERE user_id = (SELECT user_id FROM Users WHERE username = 'carol1
 23')`);
 
 await db.execute(`
