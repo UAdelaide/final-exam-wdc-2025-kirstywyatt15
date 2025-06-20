@@ -98,7 +98,7 @@ let db;
 
     // Insert data if Users table is empty
     const [users_rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-    if (rows[0].count === 0) {
+    if (users_rows[0].count === 0) {
       await db.execute(`
         INSERT INTO Users (username, email, password_hash, role) VALUES
         ('alice123', 'alice@example.com', 'hashed123', 'owner'),
@@ -110,8 +110,8 @@ let db;
       }
 
 // Insert data if Dogs table is empty
-    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
-    if (rows[0].count === 0) {
+    const [dogs_rows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+    if (dogs_rows[0].count === 0) {
       await db.execute(`
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Max', 'medium' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'alice123');
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Bella', 'small' FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'carol1
@@ -125,7 +125,7 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Borris', 3 FROM Users W
       }
 
 // Insert data if WalkRequests table is empty
-    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+    const [WR_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
     if (rows[0].count === 0) {
       await db.execute(`
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 1 FROM Dog
