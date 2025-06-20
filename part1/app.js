@@ -144,6 +144,12 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
     const [WA_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkApplications');
     if (WA_rows[0].count === 0) {
       await db.execute(`
+         INSERT INTO WalkApplications (username, email, password_hash, role) VALUES
+        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+        ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+        ('francene123', 'francene@example.com', 'hashed009', 'owner'),
+        ('paulwalker', 'paul@example.com', 'hashed007', 'walker')
 
         `);
 
