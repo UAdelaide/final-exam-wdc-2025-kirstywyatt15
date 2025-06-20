@@ -216,6 +216,8 @@ app.get('/api/walkers/summary', async (req, res) => {
         WHERE total_ratings = (SELECT COUNT(rating)
         FROM WalkRating r
         WHERE  )
+
+        
         AND WHERE average_rating = (SELECT AVG(rating)
         FROM WalkRatings
         WHERE )
