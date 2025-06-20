@@ -201,7 +201,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 });
 
 // Return all open walk requests, incl dog name, requested time, location & owner username as JSON
-app.get('/api/walkrequests/summary', async (req, res) => {
+app.get('/api/walkers/summary', async (req, res) => {
   try {
     const [openRequests] = await db.execute(`
         SELECT r.request_id,
