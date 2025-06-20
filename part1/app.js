@@ -160,8 +160,8 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
         INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
         (1, 1, 2, 1, 4, "Max loved his walk thank you"),
         (2, 1, 2, 3, 5, "Bella can't wait for new week"),
-        (3, 2, 2, 4, 3, ""),
-        (4, 2, 2, 4, 1, "Muffin hates you")
+        (3, 2, 2, 4, 3, "Borris "),
+        (4, 2, 2, 4, 1, "Muffin hates you, don't come back")
         `);
     }
   } catch (err) {
