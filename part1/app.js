@@ -51,7 +51,9 @@ let db;
     name VARCHAR(50) NOT NULL,
     size ENUM('small', 'medium', 'large') NOT NULL,
     FOREIGN KEY (owner_id) REFERENCES Users(user_id)
-)
+)`);
+
+
 
 CREATE TABLE IF NOT EXISTS WalkRequests (
     request_id INT AUTO_INCREMENT PRIMARY KEY,
