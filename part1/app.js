@@ -181,10 +181,10 @@ WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles')
     if (WA_rows[0].count === 0) {
       await db.execute(`
         INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
-        (1, 1, 2),
-        (2, 1, 2),
-        (3, 2, 2),
-        (4, 2, 2)
+        (1, 2, 2),
+        (2, 2, 2),
+        (3, 5, 2),
+        (4, 5, 2)
         `);
       }
 
