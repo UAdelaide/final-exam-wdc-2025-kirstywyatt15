@@ -159,7 +159,7 @@ app.get('/api/dogs', async (req, res) => {
 // Return all open walk requests, incl dog name, requested time, location & owner username as JSON
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [openRequests] = await db.execute(`SELECT dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 1 FROM Dog
+    const [openRequests] = await db.execute(`SELECT request_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 1 FROM Dog
 s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Max');`);
     res.json(openRequests);
   } catch (err) {
