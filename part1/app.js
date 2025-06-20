@@ -243,7 +243,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         (SELECT COUNT(rating)
         FROM WalkRatings w
         WHERE w.walker_id = o.user_id) AS total_ratings,
-        (SELECT AVG(rating)
+        (SELECT ROUND(AVG(rating),2)
         FROM WalkRatings w
         WHERE w.walker_id = o.user_id) AS average_rating,
         (SELECT COUNT(status)
