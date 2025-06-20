@@ -147,10 +147,6 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
          INSERT INTO WalkApplications (request_id, walker_id, status) VALUES
         ('1', 'alice@example.com', 'hashed123', 'owner'),
         ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-        ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-        ('francene123', 'francene@example.com', 'hashed009', 'owner'),
-        ('paulwalker', 'paul@example.com', 'hashed007', 'walker')
-
         `);
 
 // Insert data if WalkRatings table is empty
