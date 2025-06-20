@@ -208,7 +208,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         total_ratings,
         average_rating,
         completed_walks <--- also needs a fucntion
-        FROM WalkRatings r
+        FROM WalkRatings w
         INNER JOIN Users o ON r.walker_id = o.user_id
         WHERE total_ratings = (SELECT COUNT(rating)
         FROM WalkRatings r
@@ -219,8 +219,8 @@ app.get('/api/walkers/summary', async (req, res) => {
         JOIN Users o ON r.walker_id = o.user_id
         GROUP BY o.username)
         AND WHERE completed_walks = (SELECT status
-        FROM WalkRequests r
-        JOIN WalkRatings  ON
+        FROM WalkRequests
+        JOIN WalkRatings r ON
         WHERE )
         GROUP BY o.username
          ----- CHECK: ratings for WHERE walkrequest status = completed or will likely mess up avderage / totals -----
