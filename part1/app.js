@@ -121,7 +121,7 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Muffin', 'medium' FROM 
 cene123');
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Borris', 3 FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'francene123');
 `);
-
+      }
 
 // Insert data if WalkRequests table is empty
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
