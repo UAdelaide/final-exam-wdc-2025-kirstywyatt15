@@ -215,10 +215,8 @@ app.get('/api/walkers/summary', async (req, res) => {
         FROM WalkRequests r
         JOIN WalkRatings w ON r.request_id = w.request_id
         WHERE status = 'completed') AS completed_walks
-
-        FROM Users
+        FROM Users o
         RIGHT JOIN WalkRatings w ON w.walker_id = o.user_id
-    
         GROUP BY o.username
         `);
     res.json(walkers);
