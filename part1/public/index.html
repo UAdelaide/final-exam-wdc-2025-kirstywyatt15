@@ -15,7 +15,7 @@
     async function DOTD() {
         try {
             const response = await fetch('https://dog.ceo/api/breeds/image/random');
-            const data = response.message
+            const data = await response.message
 
             document.getElementById('DOTD').src = data.json();
 
