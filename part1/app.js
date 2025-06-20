@@ -210,7 +210,6 @@ app.get('/api/walkers/summary', async (req, res) => {
         completed_walks <--- also needs a fucntion
         FROM WalkRatings r
         JOIN Users o ON r.walker_id = o.user_id
-        ----- ratings for WHERE walkrequest status = completed or will likely mess up avderage / totals -----
 
         GROUP BY o.username
 
@@ -224,6 +223,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         FROM WalkRequests
         JOIN WalkRatings
         WHERE )
+         ----- ratings for WHERE walkrequest status = completed or will likely mess up avderage / totals -----
         `);
     res.json(walkers);
   } catch (err) {
