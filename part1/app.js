@@ -124,25 +124,25 @@ await db.execute(`
     SELECT user_id, 'Bella', 'small'
     FROM Users
     WHERE user_id = (SELECT user_id FROM Users
-    WHERE username = 'carol1
-23')`);
+    WHERE username = 'carol123')`);
 
 await db.execute(`
 INSERT INTO Dogs (owner_id, name, size)
 SELECT user_id, 'Pickles', 'small'
 FROM Users
-WHERE user_id = (SELECT user_id FROM Users WHERE username = 'caro
-l123')`);
+WHERE user_id = (SELECT user_id FROM Users WHERE username = 'carol123')`);
 
 await db.execute(`
 INSERT INTO Dogs (owner_id, name, size)
 SELECT user_id, 'Muffin', 'medium'
 FROM Users
-WHERE user_id = (SELECT user_id FROM Users WHERE username = 'fran
+WHERE user_id = (SELECT user_id FROM Users
+WHERE username = 'fran
 cene123')`);
 
 await db.execute(`
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Borris', 3 FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'francene123')
+INSERT INTO Dogs (owner_id, name, size)
+SELECT user_id, 'Borris', 3 FROM Users WHERE user_id = (SELECT user_id FROM Users WHERE username = 'francene123')
 `);
       }
 
