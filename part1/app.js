@@ -167,8 +167,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
         r.location,
         o.username AS owner_username
         FROM WalkRequests r
+
+        
         WHERE r.status = 'open'
-        GROUP BY r.status 
+        GROUP BY r.status
          SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 1 FROM Dog
 s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Max');`);
     res.json(openRequests);
