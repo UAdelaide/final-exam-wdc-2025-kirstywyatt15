@@ -212,7 +212,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         needs some joins, probs some subqueries
 
         FROM WalkRatings r
-        JOIN Users o ON r.owner_id = o.user_id
+        JOIN Users o ON r.walker_id = o.user_id
         WHERE r.status = 'open'
         `);
     res.json(walkers);
