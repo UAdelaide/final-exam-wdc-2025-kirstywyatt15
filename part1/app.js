@@ -157,7 +157,7 @@ s WHERE dog_id = (SELECT dog_id FROM Dogs WHERE name = 'Pickles');
     const [ratings_rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRatings');
     if (ratings_rows[0].count === 0) {
       await db.execute(`
-        INSERT INTO WalkRatings (request_id, walker_id, owner_id) VALUES
+        INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
         (1, 1, 2),
         (2, 1, 2),
         (3, 2, 2),
