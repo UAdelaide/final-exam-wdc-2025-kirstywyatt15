@@ -34,6 +34,8 @@ let db;
       database: 'DogWalkService'
     });
 
+// CREATING TABLES //
+
     // Create a Users table if it doesn't exist
     await db.execute(`CREATE TABLE IF NOT EXISTS Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
