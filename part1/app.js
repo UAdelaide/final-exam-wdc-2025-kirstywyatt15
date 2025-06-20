@@ -35,7 +35,7 @@ let db;
     });
 
     // Create a Users table if it doesn't exist
-    await db.execute(`CREATE TABLE Users (
+    await db.execute(`CREATE TABLE IF NOT EXISTS Users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
