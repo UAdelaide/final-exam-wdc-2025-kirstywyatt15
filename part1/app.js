@@ -215,7 +215,8 @@ app.get('/api/walkers/summary', async (req, res) => {
 
         WHERE total_ratings = (SELECT COUNT(rating)
         FROM WalkRating r
-        JOIN Users o ON )
+        JOIN Users o ON r.walker_id = o.user_id
+        GROUP BY o.username)
 
 
         AND WHERE average_rating = (SELECT AVG(rating)
