@@ -13,6 +13,8 @@ router.get('/getDogs', async (req, res) => {
     [user_id]);
     res.json(rows);
   } catch (error) {
+    console.error('SQL Error:', error);
+    res.status(500).json({ error: 'Failed to fetch walk requests' });
 
   }
 }
