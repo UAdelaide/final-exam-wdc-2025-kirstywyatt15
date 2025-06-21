@@ -80,13 +80,15 @@
 
         onMounted(() => {
           loadWalkRequests();
+          load
         });
 
         return {
           walks,
           message,
           error,
-          applyToWalk
+          applyToWalk,
+          dogs
         };
       }
     }).mount('#app');
