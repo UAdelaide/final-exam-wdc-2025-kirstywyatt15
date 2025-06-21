@@ -15,6 +15,7 @@ router.get('/getDogs', async (req, res) => {
     [user_id]);
     res.json(rows);
   } catch (error) {
+    // error if unable to get dogs
     console.error('SQL Error:', error);
     res.status(500).json({ error: 'Failed to fetch dogs' });
   }
