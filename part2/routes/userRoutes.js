@@ -52,7 +52,9 @@ router.post('/login', async (req, res) => {
 
     let user = rows[0];
 
-    if (user.role === '')
+    if (user.role === 'owner') {
+      
+    }
 
 "owner-dashboard.html"
 "walker-dashboard.html"
