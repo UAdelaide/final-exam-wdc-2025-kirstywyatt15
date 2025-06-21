@@ -64,6 +64,8 @@
            try {
             const rawUser = await fetch(`/api/users/me`);
             user.value = await rawUser.json();
+        } catch(err) {
+          
         }
 
         async function applyToWalk(requestId) {
