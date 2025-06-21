@@ -45,7 +45,7 @@
     createApp({
       setup() {
         const walks = ref([]);
-        const dogs = 
+        const dogs = ref([]);
         const message = ref('');
         const error = ref('');
         const user = 3;
@@ -83,7 +83,7 @@
           try {
             const res = await fetch('/api/walks/getDogs');
             if (!res.ok) throw new Error('Failed to load Dogs');
-            walks.value = await res.json();
+            dogs.value = await res.json();
           } catch (err) {
             error.value = err.message;
           }
