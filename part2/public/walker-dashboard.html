@@ -47,7 +47,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        const user = ref(''); //orignially 3
+        const user = ref(''); //orignially 3, changed this to store new user data walks.value = await res.json();
 
         async function loadWalkRequests() {
           try {
