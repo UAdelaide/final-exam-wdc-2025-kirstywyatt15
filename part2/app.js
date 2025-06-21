@@ -1,9 +1,8 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-// added session
+// added for session
 const session = require('express-session');
-
 
 const app = express();
 
