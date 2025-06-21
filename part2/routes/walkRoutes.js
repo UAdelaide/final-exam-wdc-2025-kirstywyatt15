@@ -9,7 +9,7 @@ router.get('/getDogs', async (req, res) => {
   try {
     // gets the dogs owned by this owner from the DB
     const [rows] = await db.query(`
-      SELECT d.dog_id, d.name FROM Dogs d
+      SELECT dog_id, name FROM Dogs
       INNER JOIN Users o ON d.owner_id = o.user_id
       WHERE d.owner_id = ?`,
     [user_id]);
