@@ -79,9 +79,9 @@
           }
         }
 // added loadDogs, fetches data from DB via route and stores in dogs to be rendered on page
-        async function loadDogs() {
+        async function loadDOTD() {
           try {
-            const res = await fetch('/api/walks/getDogs');
+            const res = await fetch('https://dog.ceo/api/breeds/image/random');
             dogs.value = await res.json();
           } catch (err) {
             error.value = 'Failed to load dogs';
