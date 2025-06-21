@@ -50,16 +50,15 @@ router.post('/login', async (req, res) => {
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-
+    // grabs to user_id, username and role from previous
+    let user = rows[0];
+    
     // start session for user
     req.session.user = user_id;
 
 
     // added a console log for my own confirmation
     console.log('login successful');
-
-    // grabs to user_id, username and role from previous
-    let user = rows[0];
 
     // using the role attribute, matches with either walker or owner,
     // and redirects to the correspodnign dashboard
