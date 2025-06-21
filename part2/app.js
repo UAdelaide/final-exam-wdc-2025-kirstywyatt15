@@ -7,7 +7,7 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
-// added this so my html forms can be read
+// added this so my html forms can be read by my router
 app.use(express.urlencoded({ extended: false }));
 
 // Routes
