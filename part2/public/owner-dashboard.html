@@ -123,7 +123,7 @@
           }
         }
 
-        async function Dogs() {
+        async function loadDogs() {
           try {
             const res = await fetch('/api/walks/getDogs');
             dogs.value = await res.json();
@@ -134,7 +134,7 @@
 
         onMounted(() => {
           loadWalks();
-          Dogs();
+          loadDogs();
         });
 
         return {
