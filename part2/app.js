@@ -12,7 +12,10 @@ app.use(
     session({
         secret: 'dogWalking',
         resave: false,
-        saveUnin
+        saveUninitialized: false,
+        cookie: {
+            
+        }
     })
 )
 
