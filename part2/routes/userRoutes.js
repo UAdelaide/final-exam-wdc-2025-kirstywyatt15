@@ -50,6 +50,8 @@ router.post('/login', async (req, res) => {
     }
     console.log('login successful');
 
+    if const [role] 
+
 "owner-dashboard.html"
 "walker-dashboard.html"
 
