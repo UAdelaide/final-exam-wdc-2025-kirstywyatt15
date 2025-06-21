@@ -14,11 +14,10 @@ app.use(
         resave: false,
         saveUninitialized: false,
         cookie: {
-            maxAge: 1 * 
-
+            maxAge: 1 * 60 * 60 * 1000
         }
         }
-    })
+    )
 )
 
 // Middleware
