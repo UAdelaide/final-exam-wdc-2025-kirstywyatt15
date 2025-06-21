@@ -9,7 +9,9 @@ router.get('/getDogs', async (req, res) => {
       SELECT
     `);
     res.json(rows);
-  } catch ()
+  } catch (error) {
+    
+  }
 }
 
 // GET all walk requests (for walkers to view)
