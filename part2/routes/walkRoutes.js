@@ -4,7 +4,7 @@ const db = require('../models/db');
 
 // GET owners Dogs
 router.get('/getDogs', async (req, res) => {
-  const user_id = req.session.user_id;
+  const user_id = req.session.user.user_id;
   try {
     const [rows] = await db.query(`
       SELECT d.name FROM Dogs
