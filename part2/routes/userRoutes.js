@@ -53,9 +53,10 @@ router.post('/login', async (req, res) => {
     // added a console log for my own confirmation
     console.log('login successful');
 
-    // grabs to user_id 
+    // grabs to user_id, username and role from previous
     let user = rows[0];
 
+    // using the role attribute, 
     if (user.role === 'owner') {
       res.redirect("/owner-dashboard.html");
     }
