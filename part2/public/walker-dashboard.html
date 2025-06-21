@@ -47,7 +47,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        const user = ref(''); //orignially 3, changed this to store new user data 
+        const user = ref(''); //orignially 3, changed this to store new user data
 
         async function loadWalkRequests() {
           try {
@@ -96,6 +96,7 @@
           walks,
           message,
           error,
+          user,
           applyToWalk,
         };
       }
