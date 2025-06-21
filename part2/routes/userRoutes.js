@@ -50,6 +50,10 @@ router.post('/login', async (req, res) => {
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
+
+    //start session 
+
+
     // added a console log for my own confirmation
     console.log('login successful');
 
