@@ -3,7 +3,7 @@ const router = express.Router();
 const db = require('../models/db');
 
 // GET owners Dogs
-router.get()
+router.get('/getDogs', async (req, res))
 
 // GET all walk requests (for walkers to view)
 router.get('/', async (req, res) => {
