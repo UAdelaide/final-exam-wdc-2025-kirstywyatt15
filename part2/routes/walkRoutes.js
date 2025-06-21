@@ -8,7 +8,8 @@ router.get('/getDogs', async (req, res) => {
     const [rows] = await db.query(`
       SELECT
     `);
-  }
+    res.json(rows);
+  } catch ()
 }
 
 // GET all walk requests (for walkers to view)
