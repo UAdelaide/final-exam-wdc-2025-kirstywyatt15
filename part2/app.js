@@ -13,7 +13,9 @@ app.use(
         secret: 'dogWalking',
         resave: false,
         saveUninitialized: false,
-        cookie.maxAge: 
+        cookie{
+            
+        }
         }
     })
 )
