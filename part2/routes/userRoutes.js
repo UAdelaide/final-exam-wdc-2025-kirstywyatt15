@@ -56,7 +56,8 @@ router.post('/login', async (req, res) => {
     // grabs to user_id, username and role from previous
     let user = rows[0];
 
-    // using the role attribute, matches with either walker or owner, and redirects to the correspodnign dashboard 
+    // using the role attribute, matches with either walker or owner,
+    // and redirects to the correspodnign dashboard
     if (user.role === 'owner') {
       res.redirect("/owner-dashboard.html");
     }
