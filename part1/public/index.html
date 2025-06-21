@@ -12,17 +12,14 @@
     <img id="DOTD" src="" alt="">
 
     <script>
-
     const { createApp, ref, onMounted } = Vue;
-
     createApp({
       setup() {
         // created a dotd variable where the data will be stored
         const dotd = ref('');
         const error = ref('');
 
-
-// added loadDOTD
+        // added loadDOTD
         async function loadDOTD() {
           try {
             const res = await fetch('https://dog.ceo/api/breeds/image/random');
@@ -39,6 +36,7 @@
 
         return {
           // added the dogs array here
+          
           error,
         };
       }
