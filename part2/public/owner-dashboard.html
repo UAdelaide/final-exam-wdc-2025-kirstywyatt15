@@ -122,7 +122,7 @@
             message.value = '';
           }
         }
-// added loadDogs, fetches data from DB via route and stores in dogs
+// added loadDogs, fetches data from DB via route and stores in dogs to be rendered on page
         async function loadDogs() {
           try {
             const res = await fetch('/api/walks/getDogs');
