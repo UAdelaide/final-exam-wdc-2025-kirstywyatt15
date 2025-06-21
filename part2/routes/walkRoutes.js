@@ -6,8 +6,8 @@ const db = require('../models/db');
 router.get('/getDogs', async (req, res) => {
   try {
     const [rows] = await db.query(`
-      SELECT name FROM Dogs
-      INNER JOIN User o 
+      SELECT d.name FROM Dogs
+      INNER JOIN User o ON d.owner_id = o.user_id
       WHERE
 
 
