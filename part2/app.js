@@ -10,7 +10,8 @@ const app = express();
 // session config
 app.use(
     session({
-        secret: 'dogWalking'
+        secret: 'dogWalking',
+        resave: 'false'
     })
 )
 
