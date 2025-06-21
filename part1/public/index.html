@@ -12,20 +12,6 @@
     <img id="DOTD" src="" alt="">
 
     <script>
-    async function DOTD() {
-        try {
-            const response = await fetch('https://dog.ceo/api/breeds/image/random');
-            const data = await response.message
-
-            document.getElementById('DOTD').src = data.json();
-
-        } catch {
-            console.error("Cannot get image at this time");
-        }
-    }
-
-    window.onload = DOTD;
-
 
     const { createApp, ref, onMounted } = Vue;
 
