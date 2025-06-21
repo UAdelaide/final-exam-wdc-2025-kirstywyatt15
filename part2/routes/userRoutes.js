@@ -53,7 +53,7 @@ router.post('/login', async (req, res) => {
     // grabs to user_id, username and role from previous
     let user = rows[0];
 
-    // start session for user
+    // start session for user if log in successful
     req.session.user = {
       user_id: user.user_id,
       username: user.username,
