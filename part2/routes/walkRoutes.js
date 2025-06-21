@@ -14,10 +14,9 @@ router.get('/getDogs', async (req, res) => {
     res.json(rows);
   } catch (error) {
     console.error('SQL Error:', error);
-    res.status(500).json({ error: 'Failed to fetch walk requests' });
-
+    res.status(500).json({ error: 'Failed to fetch dogs' });
   }
-}
+});
 
 // GET all walk requests (for walkers to view)
 router.get('/', async (req, res) => {
