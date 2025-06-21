@@ -65,8 +65,9 @@
             const rawUser = await fetch(`/api/users/me`);
             user.value = await rawUser.json();
         } catch(err) {
-          error.value = 'failed to ';
+          error.value = 'failed to load user data';
         }
+      }
 
         async function applyToWalk(requestId) {
           try {
