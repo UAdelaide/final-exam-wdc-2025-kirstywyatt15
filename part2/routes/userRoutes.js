@@ -56,10 +56,10 @@ router.post('/login', async (req, res) => {
       res.redirect("owner-dashboard.html")
     }
 
-    if
+    if(user.role === 'walker') {
+      res.redirect"walker-dashboard.html"
 
-
-"walker-dashboard.html"
+    }
 
 
     res.redirect('/')
