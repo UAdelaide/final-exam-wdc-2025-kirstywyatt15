@@ -61,7 +61,7 @@ router.post('/login', async (req, res) => {
     };
 
     // added a console log for my own confirmation
-    console.log('login successful');
+    console.log('login for  successful');
 
     // using the role attribute, matches with either walker or owner,
     // and redirects to the correspodnign dashboard
