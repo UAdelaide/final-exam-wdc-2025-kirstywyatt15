@@ -10,7 +10,9 @@ const app = express();
 // session config
 app.use(
     session({
+        // key to sign into session
         secret: 'dogWalking',
+        //
         resave: false,
         saveUninitialized: false,
         cookie: {
