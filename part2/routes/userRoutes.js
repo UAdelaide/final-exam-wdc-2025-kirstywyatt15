@@ -53,11 +53,11 @@ router.post('/login', async (req, res) => {
     let user = rows[0];
 
     if (user.role === 'owner') {
-      res.redirect("owner-dashboard.html");
+      res.redirect("/owner-dashboard.html");
     }
 
     if(user.role === 'walker') {
-      res.redirect("walker-dashboard.html");
+      res.redirect("/walker-dashboard.html");
     }
     // res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
