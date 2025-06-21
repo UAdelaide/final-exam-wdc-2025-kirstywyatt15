@@ -56,8 +56,9 @@ router.post('/login', async (req, res) => {
     // start session for user
     req.session.user = {
       user_id: user.user_id,
-      username: user.user
-
+      username: user.username,
+      role: user.role
+    };
 
     // added a console log for my own confirmation
     console.log('login successful');
