@@ -11,7 +11,8 @@ const app = express();
 app.use(
     session({
         secret: 'dogWalking',
-        resave: 'false'
+        resave: false,
+        saveUnin
     })
 )
 
