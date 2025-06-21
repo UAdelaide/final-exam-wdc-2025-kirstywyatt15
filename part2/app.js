@@ -16,9 +16,8 @@ app.use(
         cookie: {
             maxAge: 1 * 60 * 60 * 1000
         }
-        }
-    )
-)
+        })
+);
 
 // Middleware
 app.use(express.json());
