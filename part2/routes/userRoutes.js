@@ -51,7 +51,8 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    //start session 
+    // start session for user
+    req.session.user_id = 
 
 
     // added a console log for my own confirmation
