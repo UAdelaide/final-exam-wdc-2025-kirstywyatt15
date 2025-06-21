@@ -52,9 +52,9 @@ router.post('/login', async (req, res) => {
     }
     // grabs to user_id, username and role from previous
     let user = rows[0];
-    
+
     // start session for user
-    req.session.user = user_id;
+    req.session.user = user.
 
 
     // added a console log for my own confirmation
