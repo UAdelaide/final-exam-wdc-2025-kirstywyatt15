@@ -59,7 +59,13 @@
           }
         }
 
-        async function getCurrentUser()
+        async function getCurrentUser() {
+           // using /api/users/me to get user data
+           try {
+            const rawUser = await fetch(`/api/users/me`);
+            user.value = await rawUser.json();
+        }
+
         async function applyToWalk(requestId) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
