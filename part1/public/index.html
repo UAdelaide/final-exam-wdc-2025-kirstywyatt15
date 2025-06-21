@@ -6,11 +6,13 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
-<body id="app">
+<body>
+    <div id="app">
     <h1>Welcome to The Dog Walking Service</h1>
     <p>Here is our dog of the day:</p>
     <img v-if="dotd.status === 'success'" :src="dotd.message" alt="">
 
+    </div>
     <script>
     const { createApp, ref, onMounted } = Vue;
     createApp({
