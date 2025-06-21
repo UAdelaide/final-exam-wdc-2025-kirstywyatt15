@@ -87,7 +87,7 @@ router.post('/logout', async (req, res) => {
       return res.status(500).send('Log out failed');
     }
   // redirects user to login page
-  return res.redirect('/login');
+  return res.redirect('/api/users/login');
 });
 });
 
