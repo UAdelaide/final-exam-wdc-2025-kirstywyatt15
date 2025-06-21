@@ -37,6 +37,7 @@ router.get('/me', (req, res) => {
 
 // POST login
 router.post('/login', async (req, res) => {
+  // changed this to be username not email
   const { username, password } = req.body;
 
   try {
