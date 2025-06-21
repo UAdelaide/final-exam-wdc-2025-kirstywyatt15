@@ -53,10 +53,12 @@ router.post('/login', async (req, res) => {
     let user = rows[0];
 
     if (user.role === 'owner') {
-      
+      res.redirect("owner-dashboard.html")
     }
 
-"owner-dashboard.html"
+    if
+
+
 "walker-dashboard.html"
 
 
