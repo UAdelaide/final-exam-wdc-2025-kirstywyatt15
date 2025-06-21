@@ -61,6 +61,7 @@
 
         async function applyToWalk(requestId) {
           try {
+            // using /api/users/me to get user 
             const rawUser = await fetch(`/api/users/me`);
             user.value = await rawUser.json();
 
