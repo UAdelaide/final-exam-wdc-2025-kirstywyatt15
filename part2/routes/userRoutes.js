@@ -82,10 +82,11 @@ router.post('/login', async (req, res) => {
 router.post('/logout', async (req, res) => {
 // destorys the session and assc cookie
   req.session.destroy((err) => {
-    // if theres an error, 
+    // if theres an error,
     if (err) return res.status(500).send('Log out failed');
-    res.redirect('/login');
   });
+  // redirects user to login page
+  res.redirect('/login');
 });
 
 module.exports = router;
