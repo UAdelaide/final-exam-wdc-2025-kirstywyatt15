@@ -52,7 +52,7 @@ router.post('/login', async (req, res) => {
     }
 
     // start session for user
-    req.session.user_id = 
+    req.session.user = 
 
 
     // added a console log for my own confirmation
