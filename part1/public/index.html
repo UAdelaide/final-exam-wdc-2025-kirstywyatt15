@@ -82,9 +82,9 @@
         async function loadDOTD() {
           try {
             const res = await fetch('https://dog.ceo/api/breeds/image/random');
-            dogs.value = await res.json();
+            dotd.value = await res.json();
           } catch (err) {
-            error.value = 'Failed to load dogs';
+            error.value = 'Failed to load dog of the day';
           }
         }
 
