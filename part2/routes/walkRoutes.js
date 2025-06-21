@@ -7,6 +7,7 @@ router.get('/getDogs', async (req, res) => {
   // owner logged in, captures their user_id
   const user_id = req.session.user.user_id;
   try {
+    // gets the dogs 
     const [rows] = await db.query(`
       SELECT d.name FROM Dogs
       INNER JOIN Users o ON d.owner_id = o.user_id
