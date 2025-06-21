@@ -8,7 +8,11 @@ const cookieParser = require('cookie-parser');
 const app = express();
 
 // session config
-
+app.use(
+    session({
+        
+    })
+)
 
 // Middleware
 app.use(express.json());
