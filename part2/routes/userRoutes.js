@@ -81,7 +81,7 @@ router.post('/login', async (req, res) => {
 // POST logout
 router.post('/logout', async (req, res) => {
 // destorys the session and assc cookie
-  req.session.destroy((err) => {
+  req.session.destroy(err => {
     // if theres an error, error code and message sent
     if (err) {
       return res.status(500).send('Log out failed');
