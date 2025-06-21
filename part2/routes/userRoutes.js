@@ -86,7 +86,6 @@ router.post('/logout', async (req, res) => {
     if (err) {
       return res.status(500).send('Log out failed');
     }
-  ;
   // redirects user to login page
   return res.redirect('/login');
 });
