@@ -24,7 +24,7 @@
         <form @submit.prevent="submitWalkRequest">
           <div class="mb-3">
             <label class="form-label">Select Dog</label>
-            <select v-model="" class="form-control" required>
+            <select v-model="dogs" class="form-control" required>
               <option disabled value=""> ---- Choose dog --- </option>
               <option v:for></option>
             </select>
