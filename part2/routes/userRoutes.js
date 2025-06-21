@@ -89,5 +89,6 @@ router.post('/logout', async (req, res) => {
   // redirects user to login page
   return res.redirect('/login');
 });
+});
 
 module.exports = router;
