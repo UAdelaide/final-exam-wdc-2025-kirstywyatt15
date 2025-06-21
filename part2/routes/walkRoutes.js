@@ -8,10 +8,11 @@ router.get('/getDogs', async (req, res) => {
   const user_id = req.session.user.user_id;
   try {
     // gets the dogs owned by this owner from the DB
-    const [rows] = await db.query(`
-      SELECT dog_id, name FROM Dogs
+    const [rows] = await db.query(
+      `SELECT dog_id, name FROM Dogs
       WHERE owner_id = ?`,
-    [user_id]);
+    [user_id]
+  );
     res.json(rows);
   } catch (error) {
     // error if unable to get dogs
